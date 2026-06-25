@@ -1,0 +1,237 @@
+@use '../variables' as *;
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+
+    &__container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px 80px;
+    }
+
+    &__header {
+        margin: 0 0 8px;
+        font-size: 34px;
+        font-weight: 400;
+    }
+
+    &__subheader {
+        margin: 0 0 48px;
+        font-size: 14px;
+        color: $color-text-muted;
+    }
+
+    // --- Карточки с контактной инфой ---
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 56px;
+    }
+
+    &__card {
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        padding: 28px 24px;
+        background-color: $color-surface;
+        box-shadow: $shadow-card;
+        transition: box-shadow $transition-base, transform $transition-base, border-color $transition-base;
+
+        &:hover {
+            box-shadow: $shadow-card-hover;
+            transform: translateY(-3px);
+            border-color: $color-border-strong;
+        }
+    }
+
+    &__card-icon {
+        font-size: 32px;
+        color: $color-accent;
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    &__card-label {
+        margin: 0 0 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $color-text-muted;
+        font-weight: 600;
+    }
+
+    &__card-value {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: $color-text;
+    }
+
+    &__card-link {
+        color: $color-text;
+        text-decoration: none;
+        border-bottom: 1px solid $color-border;
+        transition: border-color $transition-fast;
+
+        &:hover {
+            border-color: $color-accent;
+        }
+    }
+
+    // --- Форма обратной связи ---
+    &__form-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+    }
+
+    &__form-title {
+        margin: 0 0 24px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__label {
+        font-size: 13px;
+        font-weight: 500;
+        color: $color-text-muted;
+    }
+
+    &__input,
+    &__textarea {
+        font-family: "Source Code Pro", serif;
+        font-size: 15px;
+        color: $color-text;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid $color-border-strong;
+        padding: 10px 0;
+        transition: border-color $transition-fast;
+        resize: none;
+        width: 100%;
+
+        &::placeholder {
+            color: $color-text-muted;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: $color-accent;
+        }
+    }
+
+    &__textarea {
+        min-height: 110px;
+    }
+
+    &__submit {
+        height: 50px;
+        background-color: $color-background;
+        color: #fff;
+        border: 1px solid $color-background;
+        border-radius: $radius-sm;
+        font-family: inherit;
+        font-size: 15px;
+        cursor: pointer;
+        transition: $transition-fast;
+        margin-top: 4px;
+
+        &:hover {
+            background-color: $color-surface;
+            color: $color-text;
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+
+    // --- Инфо-блок справа ---
+    &__info-block {
+        padding: 32px 28px;
+        background-color: $color-surface-soft;
+        border-radius: $radius-md;
+        border: 1px solid $color-border;
+    }
+
+    &__info-title {
+        margin: 0 0 20px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    &__info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14px;
+        color: $color-text;
+        line-height: 1.5;
+    }
+
+    &__info-icon {
+        font-size: 20px;
+        color: $color-accent;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+
+    &__info-text {
+        margin: 0;
+    }
+
+    &__info-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: $color-text-muted;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    @media (max-width: $bp-tablet) {
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__form-section {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+
+    @media (max-width: $bp-mobile) {
+        &__header {
+            font-size: 26px;
+        }
+
+        &__cards {
+            grid-template-columns: 1fr;
+        }
+    }
+}

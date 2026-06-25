@@ -1,0 +1,15 @@
+{
+  "name": "smiles-shop",
+  "version": "1.0.0",
+  "description": "Учебный интернет-магазин смайликов на чистом JS + Vite",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8",
+    "vite": "^5.4.10"
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+    <title>Магазин смайликов</title>
+</head>
+<body class="page">
+    <header class="header page__margin-bottom">
+        <div class="header__container">
+            <nav class="header__menu">
+                <a class="header__link header__link--active" href="index.html">Главная</a>
+                <a class="header__link" href="pages/contacts.html">Контакты</a>
+            </nav>
+            <a class="header__cart" href="pages/cart.html" aria-label="Корзина">
+                <p class="header__count">0</p>
+                <span class="material-symbols-outlined header__cart-icon">shopping_bag</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="shop page__margin-bottom">
+        <div class="shop__container">
+            <div class="shop__top">
+                <h2 class="shop__header">Магазин смайликов</h2>
+                <div class="shop__search-wrap">
+                    <span class="material-symbols-outlined shop__search-icon" aria-hidden="true">search</span>
+                    <input class="shop__search" type="text" placeholder="Поиск смайликов" aria-label="Поиск смайликов">
+                </div>
+            </div>
+            <p class="shop__count"></p>
+            <div class="shop__products">
+                <!-- Карточки товаров рендерятся через JS (src/js/card.js) -->
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h2 class="footer__title">Copyright &copy; Smiles Shop</h2>
+    </section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/src/js/index.js" type="module"></script>
+</body>
+</html>

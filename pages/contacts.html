@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+    <title>Контакты — Магазин смайликов</title>
+</head>
+<body class="page">
+    <header class="header page__margin-bottom">
+        <div class="header__container">
+            <nav class="header__menu">
+                <a class="header__link" href="../index.html">Главная</a>
+                <a class="header__link header__link--active" href="contacts.html">Контакты</a>
+            </nav>
+            <a class="header__cart" href="cart.html" aria-label="Корзина">
+                <p class="header__count">0</p>
+                <span class="material-symbols-outlined header__cart-icon">shopping_bag</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="contacts page__margin-bottom">
+        <div class="contacts__container">
+            <h1 class="contacts__header">Контакты</h1>
+            <p class="contacts__subheader">Мы всегда рады помочь и ответить на любые вопросы</p>
+
+            <!-- Карточки с контактами -->
+            <div class="contacts__cards">
+                <div class="contacts__card">
+                    <span class="material-symbols-outlined contacts__card-icon">mail</span>
+                    <p class="contacts__card-label">Email</p>
+                    <p class="contacts__card-value">
+                        <a class="contacts__card-link" href="mailto:hello@smiles.shop">hello@smiles.shop</a>
+                    </p>
+                </div>
+                <div class="contacts__card">
+                    <span class="material-symbols-outlined contacts__card-icon">phone</span>
+                    <p class="contacts__card-label">Телефон</p>
+                    <p class="contacts__card-value">
+                        <a class="contacts__card-link" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </p>
+                </div>
+                <div class="contacts__card">
+                    <span class="material-symbols-outlined contacts__card-icon">schedule</span>
+                    <p class="contacts__card-label">Время работы</p>
+                    <p class="contacts__card-value">Пн–Пт, 10:00–19:00</p>
+                </div>
+            </div>
+
+            <!-- Форма + инфо -->
+            <div class="contacts__form-section">
+                <div>
+                    <h2 class="contacts__form-title">Написать нам</h2>
+                    <form class="contacts__form" novalidate>
+                        <div class="contacts__field">
+                            <label class="contacts__label" for="contact-name">Ваше имя</label>
+                            <input
+                                class="contacts__input"
+                                id="contact-name"
+                                type="text"
+                                placeholder="Иван Иванов"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                        <div class="contacts__field">
+                            <label class="contacts__label" for="contact-email">Email</label>
+                            <input
+                                class="contacts__input"
+                                id="contact-email"
+                                type="email"
+                                placeholder="ivan@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                        <div class="contacts__field">
+                            <label class="contacts__label" for="contact-subject">Тема</label>
+                            <input
+                                class="contacts__input"
+                                id="contact-subject"
+                                type="text"
+                                placeholder="Вопрос по заказу"
+                            >
+                        </div>
+                        <div class="contacts__field">
+                            <label class="contacts__label" for="contact-message">Сообщение</label>
+                            <textarea
+                                class="contacts__textarea"
+                                id="contact-message"
+                                placeholder="Расскажите, чем мы можем помочь…"
+                                required
+                            ></textarea>
+                        </div>
+                        <button class="contacts__submit" type="submit">Отправить сообщение</button>
+                    </form>
+                </div>
+
+                <!-- Инфо-блок -->
+                <div class="contacts__info-block">
+                    <h2 class="contacts__info-title">Полезная информация</h2>
+                    <ul class="contacts__info-list">
+                        <li class="contacts__info-item">
+                            <span class="material-symbols-outlined contacts__info-icon">bolt</span>
+                            <p class="contacts__info-text">
+                                <span class="contacts__info-label">Быстрый ответ</span>
+                                Обычно отвечаем в течение нескольких часов в рабочее время.
+                            </p>
+                        </li>
+                        <li class="contacts__info-item">
+                            <span class="material-symbols-outlined contacts__info-icon">package_2</span>
+                            <p class="contacts__info-text">
+                                <span class="contacts__info-label">Вопросы по заказам</span>
+                                По вопросам о статусе заказа укажите его номер в теме сообщения.
+                            </p>
+                        </li>
+                        <li class="contacts__info-item">
+                            <span class="material-symbols-outlined contacts__info-icon">emoji_emotions</span>
+                            <p class="contacts__info-text">
+                                <span class="contacts__info-label">Предложения</span>
+                                Хотите видеть новые смайлики в магазине? Пишите — мы прислушиваемся!
+                            </p>
+                        </li>
+                        <li class="contacts__info-item">
+                            <span class="material-symbols-outlined contacts__info-icon">verified_user</span>
+                            <p class="contacts__info-text">
+                                <span class="contacts__info-label">Безопасность</span>
+                                Ваши данные никогда не передаются третьим лицам.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h2 class="footer__title">Copyright &copy; Smiles Shop</h2>
+    </section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/src/js/contacts.js" type="module"></script>
+</body>
+</html>

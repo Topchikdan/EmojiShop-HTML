@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+    <title>Корзина — Магазин смайликов</title>
+</head>
+<body class="page">
+    <header class="header page__margin-bottom">
+        <div class="header__container">
+            <nav class="header__menu">
+                <a class="header__link" href="../index.html">Главная</a>
+                <a class="header__link" href="contacts.html">Контакты</a>
+            </nav>
+            <a class="header__cart header__link--active" href="cart.html" aria-label="Корзина">
+                <p class="header__count">0</p>
+                <span class="material-symbols-outlined header__cart-icon">shopping_bag</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="cart-page page__margin-bottom">
+        <div class="cart-page__container">
+            <h1 class="cart-page__header">Корзина</h1>
+            <p class="cart-page__subheader">Ваши выбранные смайлики</p>
+
+            <div class="cart-page__layout">
+                <!-- Список товаров -->
+                <div class="cart-page__items">
+                    <!-- Рендерится через JS -->
+                </div>
+
+                <!-- Итого -->
+                <aside class="cart-page__summary">
+                    <h2 class="cart-page__summary-title">Итого</h2>
+                    <div class="cart-page__summary-row">
+                        <span class="cart-page__summary-label">Товаров</span>
+                        <span class="cart-page__summary-val cart-page__count-val">—</span>
+                    </div>
+                    <div class="cart-page__summary-row cart-page__summary-row--total">
+                        <span class="cart-page__summary-label">Сумма</span>
+                        <span class="cart-page__summary-val cart-page__total-val">—</span>
+                    </div>
+                    <button class="cart-page__checkout-btn" type="button">
+                        <span class="material-symbols-outlined" style="font-size:18px">check_circle</span>
+                        Оформить заказ
+                    </button>
+                    <button class="cart-page__clear-btn" type="button">Очистить корзину</button>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h2 class="footer__title">Copyright &copy; Smiles Shop</h2>
+    </section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/src/js/cart-page.js" type="module"></script>
+</body>
+</html>

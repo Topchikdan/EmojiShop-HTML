@@ -1,0 +1,272 @@
+@use '../variables' as *;
+
+.cart-page {
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+
+    &__container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px;
+        padding-bottom: 60px;
+    }
+
+    &__header {
+        margin: 0 0 8px;
+        font-size: 34px;
+        font-weight: 400;
+    }
+
+    &__subheader {
+        margin: 0 0 36px;
+        font-size: 14px;
+        color: $color-text-muted;
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 32px;
+        align-items: start;
+    }
+
+    // --- Список товаров ---
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 80px 1fr auto;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        background-color: $color-surface;
+        box-shadow: $shadow-card;
+        transition: box-shadow $transition-base;
+
+        &:hover {
+            box-shadow: $shadow-card-hover;
+        }
+    }
+
+    &__item-emoji {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        background-color: $color-surface-soft;
+        border-radius: $radius-sm;
+        font-size: 44px;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    &__item-info {
+        min-width: 0;
+    }
+
+    &__item-name {
+        margin: 0 0 4px;
+        font-size: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__item-desc {
+        margin: 0 0 8px;
+        font-size: 13px;
+        color: $color-text-muted;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__item-price {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-accent;
+    }
+
+    &__item-remove {
+        background: transparent;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: $color-text-muted;
+        transition: $transition-fast;
+        flex-shrink: 0;
+
+        .material-symbols-outlined {
+            font-size: 18px;
+        }
+
+        &:hover {
+            border-color: $color-danger;
+            color: $color-danger;
+            background-color: rgba($color-danger, 0.05);
+        }
+
+        &:active {
+            transform: scale(0.93);
+        }
+    }
+
+    // --- Итоговый блок ---
+    &__summary {
+        position: sticky;
+        top: 24px;
+        background-color: $color-surface;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        padding: 28px;
+        box-shadow: $shadow-card;
+    }
+
+    &__summary-title {
+        margin: 0 0 20px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 12px;
+        font-size: 14px;
+
+        &--total {
+            border-top: 1px solid $color-border;
+            padding-top: 14px;
+            margin-top: 4px;
+            font-size: 17px;
+            font-weight: 600;
+
+            .cart-page__summary-val {
+                color: $color-accent;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__summary-label {
+        color: $color-text-muted;
+    }
+
+    &__summary-val {
+        font-weight: 500;
+    }
+
+    &__checkout-btn {
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        background-color: $color-background;
+        color: #fff;
+        border: 1px solid $color-background;
+        border-radius: $radius-sm;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: $transition-fast;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        &:hover {
+            background-color: $color-surface;
+            color: $color-text;
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+
+    &__clear-btn {
+        width: 100%;
+        height: 40px;
+        margin-top: 10px;
+        background-color: transparent;
+        color: $color-text-muted;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: $transition-fast;
+
+        &:hover {
+            border-color: $color-danger;
+            color: $color-danger;
+        }
+    }
+
+    // --- Пустая корзина ---
+    &__empty {
+        grid-column: 1 / -1;
+    }
+
+    &__back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+        color: $color-text;
+        font-size: 14px;
+        text-decoration: none;
+        border-bottom: 1px solid $color-border;
+        padding-bottom: 2px;
+        transition: border-color $transition-fast;
+
+        &:hover {
+            border-color: $color-accent;
+        }
+    }
+
+    @media (max-width: $bp-tablet) {
+        &__layout {
+            grid-template-columns: 1fr;
+        }
+
+        &__summary {
+            position: static;
+        }
+    }
+
+    @media (max-width: $bp-mobile) {
+        &__header {
+            font-size: 26px;
+        }
+
+        &__item {
+            grid-template-columns: 64px 1fr auto;
+            gap: 14px;
+            padding: 16px;
+        }
+
+        &__item-emoji {
+            width: 64px;
+            height: 64px;
+            font-size: 34px;
+        }
+    }
+}

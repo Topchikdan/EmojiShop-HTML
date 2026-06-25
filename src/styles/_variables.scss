@@ -1,0 +1,31 @@
+// Цвета
+$color-text: #1f1d25;
+$color-text-muted: #6e6b76;
+$color-link: #1f1d25;
+$color-background: #1f1d25;
+$color-surface: #ffffff;
+$color-surface-soft: #f6f5f8;
+$color-border: #e3e1e8;
+$color-border-strong: #1f1d25;
+$color-accent: #ff5c6c;
+$color-accent-hover: #ff7c8a;
+$color-success: #2bb673;
+$color-danger: #e6483e;
+
+// Тени
+$shadow-card: 0 2px 10px rgba(31, 29, 37, 0.06);
+$shadow-card-hover: 0 12px 28px rgba(31, 29, 37, 0.12);
+
+// Радиусы
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$radius-round: 100%;
+
+// Переходы
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s ease;
+
+// Брейкпоинты
+$bp-tablet: 900px;
+$bp-mobile: 560px;
